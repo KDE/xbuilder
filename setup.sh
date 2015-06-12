@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CHROOT_PATH=`pwd`/testdir
 
 if [ "$#" -ne 1 ]; then
@@ -18,6 +20,12 @@ mount |grep $CHROOT_PATH/proc 2>&1 >> /dev/null || mount --bind /proc $CHROOT_PA
 cp insidesetup.sh $CHROOT_PATH/root/
 chroot $CHROOT_PATH /root/insidesetup.sh
 
-sed -e "s#@CHROOT_PATH@#$CHROOT_PATH#" -e "s#@SRC_PATH@#$1#" go-mobile.in > go-mobile
+
+cp -R .zsh* $CHROOT_PATH/home/plasmamobile
+
+sed -e "s#@CHROOT_PATH@#$CHROOT_PATH#" \
+    -e "s#@SRC_PATH@#$1#" \
+    -e "s#@SHELL@#$SHELL#" \
+    go-mobile.in > go-mobile
 chmod a+x go-mobile
 

@@ -28,9 +28,14 @@ apt-get build-dep -a armhf kwin -y --force-yes #--host-architecture=armhf # forc
 adduser plasmamobile --gecos "" --disabled-password
 mkdir -p /home/plasmamobile/src
 
-echo "
+RC="
 export \`cat /etc/environment\`
 unset LANG
 CC=/usr/bin/arm-linux-gnueabihf-gcc
 VARS=\`dpkg-architecture -A amd64 -a armhf -l\`
-export \$VARS" >> /home/plasmamobile/.bashrc
+export \$VARS"
+echo $RC >> /home/plasmamobile/.bashrc
+echo $RC >> /home/plasmamobile/.zshrc
+
+echo "plasmamobile   ALL=NOPASSWD:ALL" >> /etc/sudoers
+

@@ -75,3 +75,8 @@ alias show='apt-cache show'
 alias install='sudo apt-get install'
 alias remove='sudo apt-get remove'
 
+alias install="sudo apt-get install"
+alias update="sudo apt-get update"
+alias dupgrade="sudo apt-get dupgrade"
+alias upgrade="sudo apt-get upgrade"
+alias build-dep="sudo apt-get build-dep"

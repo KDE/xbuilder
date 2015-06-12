@@ -2,6 +2,7 @@
 
 CHROOT_PATH=@CHROOT_PATH@
 SRC_PATH=@SRC_PATH@
+SHELL=@SHELL@
 
 SUDO=''
 if (( $EUID != 0 )); then
@@ -21,4 +22,4 @@ $SUDO cp /etc/resolv.conf $CHROOT_PATH/etc/resolv.conf
 $SUDO chroot --userspec=plasmamobile:users $CHROOT_PATH /usr/bin/env -i  \
     TERM=xterm \
     HOME=/home/plasmamobile \
-    /bin/bash
+    $SHELL
