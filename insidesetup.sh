@@ -19,11 +19,15 @@ deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid main universe r
 deb [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
 deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
 
-deb http://ppa.launchpad.net/kubuntu-ci/unstable/ubuntu vivid main" > /etc/apt/sources.list
+deb http://ppa.launchpad.net/kubuntu-ci/unstable/ubuntu vivid main
+deb-src http://ppa.launchpad.net/kubuntu-ci/unstable/ubuntu vivid main" > /etc/apt/sources.list
 
 apt update
 apt-get install crossbuild-essential-armhf adduser dh-exec vim zsh git htop -y
 apt-get build-dep -a armhf kwin -y --force-yes #--host-architecture=armhf # force-yes is needed because "WARNING: The packages cannot be authenticated!"
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A12B6139432062D1
+
 
 adduser plasmamobile --gecos "" --disabled-password
 mkdir -p /home/plasmamobile/src
