@@ -27,5 +27,6 @@ sed -e "s#@CHROOT_PATH@#$CHROOT_PATH#" \
     -e "s#@SRC_PATH@#$1#" \
     -e "s#@SHELL@#$SHELL#" \
     go-mobile.in > go-mobile
+
 chmod a+x go-mobile
 
