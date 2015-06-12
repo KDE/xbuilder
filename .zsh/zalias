@@ -1,0 +1,77 @@
+# system wide zsh aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ~='cd'
+alias cs='cd ~/src'
+alias c='clear'
+alias e='exit'
+alias ps='ps --forest'
+alias g='egrep'
+alias l='ls -alhF --color=tty'
+alias top="htop"
+alias suzsh="sudo zsh"
+
+# user zsh aliases
+alias svn='EDITOR="vi -i NONE" svn'
+alias typo="svn ci -m typo"
+
+alias svim="sudo vim"
+alias vim="lvim"
+alias vc="cb && cs && vim CMakeLists.txt"
+#alias vd="vim `find . -name \"*\.desktop\"`"
+alias ss="systemsettings5"
+alias kd="kdevelop --pick-session &"
+
+if [[ "$SHELL" == *zsh ]]; then
+    alias -g '...'='../..'
+    alias -g '....'='../../..'
+    alias -g '.....'='../../../..'
+    alias -g L="| less"
+fi
+alias G="egrep"
+
+alias push="git push"
+alias pull="git pull"
+alias gd="git diff"
+alias gs="git diff --stat"
+alias fakepush="git log HEAD --not --remotes"
+alias fakepushshort="git shortlog HEAD --not --remotes"
+alias scp='rsync --progress -v -a -e "ssh -x"'
+
+
+alias pw="plasma-windowed -nofork"
+
+alias k5="kbuildsycoca5"
+
+alias su='sudo su -'
+
+
+alias ll='ls -lh --color'
+alias l='ls --color'
+alias la='ls -lha --color'
+alias py='python'
+alias eterm='Eterm -t trans -T IRSSI'
+alias cl='clear'
+alias g='grep'
+alias buntar="tar xvjf"
+alias guntar="tar xvzf"
+alias untar="tar xvf"
+alias btar="tar cvjf"
+alias xtar="tar cvJf"
+alias gtar="tar cvzf"
+alias ds="diskspace"
+alias t="tree -Ch"
+
+
+alias wobble="qdbus org.kde.KWin /Effects loadEffect kwin4_effect_wobblywindows"
+
+# Aliases for Debian
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias dist-upgrade='sudo apt-get dist-upgrade'
+alias dupgrade='sudo apt-get dist-upgrade'
+alias search='apt-cache search'
+alias show='apt-cache show'
+alias install='sudo apt-get install'
+alias remove='sudo apt-get remove'
+
