@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHROOT_PATH=`pwd`/testdir
+CHROOT_PATH=`pwd`/plasma-mobile-sdk
 
 if [ "$#" -ne 1 ]; then
     echo "usage: setup.sh <src-directory>"
