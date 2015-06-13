@@ -16,7 +16,6 @@ alias svn='EDITOR="vi -i NONE" svn'
 alias typo="svn ci -m typo"
 
 alias svim="sudo vim"
-alias vim="lvim"
 alias vc="cb && cs && vim CMakeLists.txt"
 #alias vd="vim `find . -name \"*\.desktop\"`"
 alias ss="systemsettings5"
