@@ -20,7 +20,11 @@ deb [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main univer
 deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
 
 deb http://ppa.launchpad.net/kubuntu-ci/unstable/ubuntu vivid main
-deb-src http://ppa.launchpad.net/kubuntu-ci/unstable/ubuntu vivid main" > /etc/apt/sources.list
+deb-src http://ppa.launchpad.net/kubuntu-ci/unstable/ubuntu vivid main
+
+deb http://ppa.launchpad.net/plasma-phone/ppa/ubuntu vivid main
+deb-src http://ppa.launchpad.net/plasma-phone/ppa/ubuntu vivid main
+" > /etc/apt/sources.list
 
 apt update
 apt-get install crossbuild-essential-armhf adduser dh-exec vim zsh git htop -y
