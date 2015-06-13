@@ -15,3 +15,5 @@ Once it's ready, you'll get a "go-mobile" executable that will let you in the sy
 ``` ./go-mobile ```
 
 That should give you a workable environment.
+
+Check xutils repository to see some extra available tools inside
