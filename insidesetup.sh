@@ -33,16 +33,15 @@ adduser plasmamobile --gecos "" --disabled-password
 mkdir -p /home/plasmamobile/src
 su plasmamobile -c "git clone https://github.com/plasma-mobile/xutils.git /home/plasmamobile"
 
-RC="
+tee --append /home/plasmamobile/.zshrc /home/plasmamobile/.bashrc >/dev/null << EOF
+
 export \`cat /etc/environment\`
 unset LANG
 CC=/usr/bin/arm-linux-gnueabihf-gcc
 VARS=\`dpkg-architecture -A amd64 -a armhf -l\`
 export \$VARS
 export PATH=/home/plasmamobile/xutils:\$PATH
-"
-echo $RC >> /home/plasmamobile/.bashrc
-echo $RC >> /home/plasmamobile/.zshrc
+EOF
 
 echo "plasmamobile   ALL=NOPASSWD:ALL" >> /etc/sudoers
 
