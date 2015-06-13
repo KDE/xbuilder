@@ -26,16 +26,17 @@ deb http://ppa.launchpad.net/plasma-phone/ppa/ubuntu vivid main
 deb-src http://ppa.launchpad.net/plasma-phone/ppa/ubuntu vivid main
 " > /etc/apt/sources.list
 
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A12B6139432062D1
 apt update
-apt-get install crossbuild-essential-armhf adduser dh-exec vim zsh git htop -y
-apt-get build-dep -a armhf kwin -y --force-yes #--host-architecture=armhf # force-yes is needed because "WARNING: The packages cannot be authenticated!"
-
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A12B6139432062D1
+apt-get install crossbuild-essential-armhf adduser dh-exec vim zsh git htop python -y
 
 
 adduser plasmamobile --gecos "" --disabled-password
+
 mkdir -p /home/plasmamobile/src
-su plasmamobile -c "git clone https://github.com/plasma-mobile/xutils.git /home/plasmamobile"
+
+su plasmamobile -c "git clone https://github.com/plasma-mobile/xutils.git /home/plasmamobile/xutils"
+
 
 tee --append /home/plasmamobile/.zshrc /home/plasmamobile/.bashrc >/dev/null << EOF
 
@@ -49,3 +50,4 @@ EOF
 
 echo "plasmamobile   ALL=NOPASSWD:ALL" >> /etc/sudoers
 
+apt-get build-dep -a armhf kwin -y --force-yes #--host-architecture=armhf # force-yes is needed because "WARNING: The packages cannot be authenticated!"
