@@ -17,3 +17,7 @@ Once it's ready, you'll get a "go-mobile" executable that will let you in the sy
 That should give you a workable environment.
 
 Check xutils repository to see some extra available tools inside
+
+While configuring a project with cmake, is important to add
+the following in order to cmake to work a second time
+-DCMAKE_TOOLCHAIN_FILE=/usr/share/cmake-3.0/Modules/MultiArchCross.cmake
