@@ -19,8 +19,8 @@ deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid main universe r
 deb [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
 deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
 
-deb http://ppa.launchpad.net/kubuntu-ci/unstable/ubuntu vivid main
-deb-src http://ppa.launchpad.net/kubuntu-ci/unstable/ubuntu vivid main
+deb http://ppa.launchpad.net/plasma-phone/ci/ubuntu vivid main
+deb-src http://ppa.launchpad.net/plasma-phone/ci/ubuntu vivid main
 
 deb http://ppa.launchpad.net/plasma-phone/ppa/ubuntu vivid main
 deb-src http://ppa.launchpad.net/plasma-phone/ppa/ubuntu vivid main
