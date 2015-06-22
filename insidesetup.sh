@@ -46,6 +46,7 @@ CC=/usr/bin/arm-linux-gnueabihf-gcc
 VARS=\`dpkg-architecture -A amd64 -a armhf -l\`
 export \$VARS
 export PATH=/home/plasmamobile/xutils:\$PATH
+export QMAKESPEC=ubuntu-arm-gnueabihf-g++
 EOF
 
 echo "plasmamobile   ALL=NOPASSWD:ALL" >> /etc/sudoers
