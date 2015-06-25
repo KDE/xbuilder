@@ -19,11 +19,8 @@ deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid main universe r
 deb [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
 deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
 
-deb http://ppa.launchpad.net/plasma-phone/ci/ubuntu vivid main
-deb-src http://ppa.launchpad.net/plasma-phone/ci/ubuntu vivid main
-
-deb http://ppa.launchpad.net/plasma-phone/ppa/ubuntu vivid main
-deb-src http://ppa.launchpad.net/plasma-phone/ppa/ubuntu vivid main
+deb [arch=armhf] http://mobile.kci.pangea.pub vivid main
+deb-src [arch=armhf] http://mobile.kci.pangea.pub vivid main
 " > /etc/apt/sources.list
 
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A12B6139432062D1
