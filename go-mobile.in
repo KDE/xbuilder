@@ -23,3 +23,8 @@ $SUDO chroot --userspec=plasmamobile:users $CHROOT_PATH /usr/bin/env -i  \
     TERM=xterm \
     HOME=/home/plasmamobile \
     $SHELL
+
+$SUDO umount $CHROOT_PATH/sys
+$SUDO umount $CHROOT_PATH/dev
+$SUDO umount $CHROOT_PATH/proc
+

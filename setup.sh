@@ -35,3 +35,7 @@ chmod a+x $XBUILDER_DIR/go-mobile
 # Note: This script may fail in the end, since it installs cross-compile dependencies
 # which are often broken, so run this last
 chroot $CHROOT_PATH /root/insidesetup.sh
+
+sudo umount $CHROOT_PATH/sys
+sudo umount $CHROOT_PATH/dev
+sudo umount $CHROOT_PATH/proc
