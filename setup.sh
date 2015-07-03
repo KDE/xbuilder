@@ -13,9 +13,6 @@ which chroot > /dev/null
 
 debootstrap vivid $CHROOT_PATH http://archive.ubuntu.com/ubuntu
 
-mount |grep $CHROOT_PATH/sys 2>&1 >> /dev/null || mount --bind /sys $CHROOT_PATH/sys
-mount |grep $CHROOT_PATH/dev 2>&1 >> /dev/null || mount --bind /dev $CHROOT_PATH/dev
-mount |grep $CHROOT_PATH/proc 2>&1 >> /dev/null || mount --bind /proc $CHROOT_PATH/proc
 
 # Copy insidesetup.sh to root dir, we need the readlink magic here since insidesetup.sh
 # may not be in the current directory
@@ -31,6 +28,10 @@ sed -e "s#@CHROOT_PATH@#$CHROOT_PATH#" \
     $XBUILDER_DIR/go-mobile.in > $XBUILDER_DIR/go-mobile
 
 chmod a+x $XBUILDER_DIR/go-mobile
+
+mount |grep $CHROOT_PATH/sys 2>&1 >> /dev/null || mount --bind /sys $CHROOT_PATH/sys
+mount |grep $CHROOT_PATH/dev 2>&1 >> /dev/null || mount --bind /dev $CHROOT_PATH/dev
+mount |grep $CHROOT_PATH/proc 2>&1 >> /dev/null || mount --bind /proc $CHROOT_PATH/proc
 
 # Note: This script may fail in the end, since it installs cross-compile dependencies
 # which are often broken, so run this last
