@@ -1,26 +1,10 @@
 #!/bin/bash
 
 CHROOT_PATH=`pwd`/plasma-mobile-sdk
-
-if [ "$#" -ne 1 ]; then
-    echo "usage: setup.sh <src-directory>"
-    exit
-fi
-
-set -e
-which debootstrap > /dev/null
-which chroot > /dev/null
-
-debootstrap vivid $CHROOT_PATH http://archive.ubuntu.com/ubuntu
-
-
-# Copy insidesetup.sh to root dir, we need the readlink magic here since insidesetup.sh
-# may not be in the current directory
 XBUILDER_DIR=$(readlink -f $(dirname -- "$0"))
 
-
-cp $XBUILDER_DIR/insidesetup.sh $CHROOT_PATH/root/
-cp -R $XBUILDER_DIR/.zsh* $CHROOT_PATH/etc/skel
+set -e
+./chreatechroot $XBUILDER_DIR
 
 sed -e "s#@CHROOT_PATH@#$CHROOT_PATH#" \
     -e "s#@SRC_PATH@#$1#" \
