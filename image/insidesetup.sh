@@ -30,7 +30,7 @@ apt-get install crossbuild-essential-armhf adduser dh-exec vim zsh git htop pyth
 
 adduser plasmamobile --gecos "" --disabled-password
 mkdir -p /home/plasmamobile/src
-su plasmamobile -c "git clone https://github.com/plasma-mobile/xutils.git /home/plasmamobile/xutils"
+su - plasmamobile -c "git clone https://github.com/plasma-mobile/xutils.git /home/plasmamobile/xutils"
 echo "plasmamobile   ALL=NOPASSWD:ALL" >> /etc/sudoers
 
 tee --append /home/plasmamobile/.zshrc /home/plasmamobile/.bashrc >/dev/null << EOF
