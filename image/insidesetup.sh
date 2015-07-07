@@ -25,7 +25,7 @@ deb-src [arch=armhf,amd64] http://mobile.kci.pangea.pub vivid main
 
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A12B6139432062D1
 apt update
-apt-get install crossbuild-essential-armhf adduser dh-exec vim zsh git htop python -y
+apt-get install crossbuild-essential-armhf adduser dh-exec vim zsh git htop python sudo -y
 
 
 adduser plasmamobile --gecos "" --disabled-password
