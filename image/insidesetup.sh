@@ -19,8 +19,8 @@ deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid main universe r
 deb [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
 deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
 
-deb [arch=armhf] http://mobile.kci.pangea.pub vivid main
-deb-src [arch=armhf] http://mobile.kci.pangea.pub vivid main
+deb [arch=armhf,amd64] http://mobile.kci.pangea.pub vivid main
+deb-src [arch=armhf,amd64] http://mobile.kci.pangea.pub vivid main
 " > /etc/apt/sources.list
 
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A12B6139432062D1
