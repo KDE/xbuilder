@@ -33,6 +33,13 @@ mkdir -p /home/plasmamobile/src
 su - plasmamobile -c "git clone https://github.com/plasma-mobile/xutils.git /home/plasmamobile/xutils"
 echo "plasmamobile   ALL=NOPASSWD:ALL" >> /etc/sudoers
 
+cat << EOF > /home/plasmamobile/.gitconfig
+[url "git://anongit.kde.org/"]
+   insteadOf = kde:
+[url "ssh://git@git.kde.org/"]
+   pushInsteadOf = kde:
+EOF
+
 tee --append /home/plasmamobile/.zshrc /home/plasmamobile/.bashrc >/dev/null << EOF
 
 export \`cat /etc/environment\`
