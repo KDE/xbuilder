@@ -1,5 +1,7 @@
 Welcome to the wonderful world of cross compilation. Where magic is possible and things break unexpectedly!
 
+# What to find
+
 What we're going to do here is to create a debian&ubuntu-based system with armhf cross-compilation capabilities. Since we won't be able to properly access the whole system, it mounts a suggested directory so that you can access the source-code for building purposes.
 
 There's 2 ways of building the SDK:
@@ -21,7 +23,7 @@ Once it's ready, you'll get a "go-mobile" executable that will let you in the sy
 
 That should give you a workable environment.
 
-Check xutils repository to see some extra available tools inside
+Check `xutils` repository to see some extra available tools inside
 
 
 # Docker
@@ -39,6 +41,9 @@ docker run -ti pms bash
 
 If you want to import local source code, use --volume:
 `docker run -ti -v /home/kde-devel/frameworks:/src pms bash` where `/home/kde-devel/frameworks` is the sources directory.
+
+## Docker things
+Take into account that the files created within the image will be destroyed.
 
 # Tips
 While configuring a project with cmake, is important to add
