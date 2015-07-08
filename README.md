@@ -8,7 +8,7 @@ There's 2 ways of building the SDK:
     * that loses all changes every time we log out
     * where we can't access our local files.
 
-= old-school chroot =
+# Old-school chroot
 To get get started we'll do the following:
 
 `sudo ./setup.sh <your projects path>`
@@ -23,14 +23,24 @@ That should give you a workable environment.
 
 Check xutils repository to see some extra available tools inside
 
-= Docker =
+
+# Docker
+## Build Docker image
 ```
-cd image
-docker build -t pms .
+# cd image
+# docker build -t pms .
+```
+
+## Execute
+This will execute the image
+```
 docker run -ti pms bash
 ```
 
-= Tips =
+If you want to import local source code, use --volume:
+`docker run -ti -v /home/kde-devel/frameworks:/src pms bash` where `/home/kde-devel/frameworks` is the sources directory.
+
+# Tips
 While configuring a project with cmake, is important to add
 the following in order to cmake to work a second time
 `-DCMAKE_TOOLCHAIN_FILE=/usr/share/cmake-3.0/Modules/MultiArchCross.cmake`
