@@ -24,3 +24,5 @@ chroot $CHROOT_PATH /root/insidesetup.sh
 sudo umount $CHROOT_PATH/sys
 sudo umount $CHROOT_PATH/dev
 sudo umount $CHROOT_PATH/proc
+
+sudo mkdir -p $CHROOT_PATH/home/plasmamobile/src
