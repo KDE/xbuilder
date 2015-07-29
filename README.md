@@ -25,22 +25,30 @@ That should give you a workable environment.
 
 Check `xutils` repository to see some extra available tools inside
 
-
 # Docker
-## Build Docker image
+There's an alternative procedure to set up the SDK. This one is using docker for setting up the facility and to set up the work. It has the advantage that it's much faster to set up and manage the system.
+
+## Proposed workflow:
+Create the image
 ```
-# cd image
-# docker build -t pms .
+cd image
+docker build -t plasma-mobile-sdk .
 ```
 
-## Execute
-This will execute the image
+Create the container instance for the needed project, see information about volumes.
 ```
-docker run -ti pms bash
+docker create -ti --name myproject plasma-mobile-sdk bash
 ```
+If you want to use local source code, use --volume (-v):
+`docker create -ti -v /home/kde-devel/frameworks:/src plasma-mobile-sdk --name myproject bash` where `/home/kde-devel/frameworks` is the sources directory.
 
-If you want to import local source code, use --volume:
-`docker run -ti -v /home/kde-devel/frameworks:/src pms bash` where `/home/kde-devel/frameworks` is the sources directory.
+If you want to access the local filesystem to access the source code, consider specifying a docker volume (--volume /localpath:/dockerpath).
+See [Docker Volumes Documentation](https://docs.docker.com/userguide/dockervolumes/) for more information.
+
+Start the container for our project.
+```
+docker start -i myproject
+```
 
 ## Docker things
 Take into account that the files created within the image will be destroyed.
