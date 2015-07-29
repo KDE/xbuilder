@@ -6,7 +6,7 @@ unset LANG #remove? or just install locales...
 source /etc/environment
 dpkg --add-architecture armhf
 
-echo "\
+echo < EOF > /etc/apt/sources.list
 deb [arch=armhf] http://ports.ubuntu.com/ vivid main universe restricted
 deb-src [arch=armhf]  http://ports.ubuntu.com/ vivid main universe restricted
 
@@ -21,7 +21,7 @@ deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main un
 
 deb [arch=armhf,amd64] http://mobile.kci.pangea.pub vivid main
 deb-src [arch=armhf,amd64] http://mobile.kci.pangea.pub vivid main
-" > /etc/apt/sources.list
+EOF
 
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A12B6139432062D1
 apt update
