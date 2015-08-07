@@ -39,9 +39,6 @@ Create the container instance for the needed project, see information about volu
 ```
 docker create -ti --name myproject plasma-mobile-sdk bash
 ```
-If you want to use local source code, use --volume (-v):
-`docker create -ti -v /home/kde-devel/frameworks:/src plasma-mobile-sdk --name myproject bash` where `/home/kde-devel/frameworks` is the sources directory.
-
 If you want to access the local filesystem to access the source code, consider specifying a docker volume (--volume /localpath:/dockerpath).
 See [Docker Volumes Documentation](https://docs.docker.com/userguide/dockervolumes/) for more information.
 
