@@ -1,6 +1,6 @@
 #!/bin/ruby
 
-buildResult = system("docker build -t pms-test ../image")
+buildResult = system("docker build --no-cache=true -t pms-test ../image")
 
 if buildResult then
     puts "Awesome"
