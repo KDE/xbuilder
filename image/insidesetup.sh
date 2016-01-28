@@ -26,7 +26,7 @@ echo 'Debug::pkgProblemResolver "true";' > /etc/apt/apt.conf.d/debug
 
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A12B6139432062D1
 apt update
-apt-get install crossbuild-essential-armhf adduser dh-exec vim zsh git htop python sudo -y
+apt-get install crossbuild-essential-armhf adduser dh-exec vim zsh git htop python sudo cmake-curses-gui -y
 
 
 adduser plasmamobile --gecos "" --disabled-password
