@@ -1,4 +1,4 @@
-FROM ubuntu:vivid
+FROM ubuntu:xenial
 
 LABEL Description="Plasma Mobile SDK"
 MAINTAINER Aleix Pol i Gonzalez <aleixpol@kde.org>

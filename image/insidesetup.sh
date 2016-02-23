@@ -6,20 +6,20 @@ unset LANG #remove? or just install locales...
 source /etc/environment
 dpkg --add-architecture armhf
 
-echo "deb [arch=armhf] http://ports.ubuntu.com/ vivid main universe restricted
-deb-src [arch=armhf]  http://ports.ubuntu.com/ vivid main universe restricted
+echo "deb [arch=armhf] http://ports.ubuntu.com/ xenial main universe restricted
+deb-src [arch=armhf]  http://ports.ubuntu.com/ xenial main universe restricted
 
-deb [arch=armhf] http://ports.ubuntu.com/ vivid-updates main universe restricted
-deb-src [arch=armhf] http://ports.ubuntu.com/ vivid-updates main universe restricted
+deb [arch=armhf] http://ports.ubuntu.com/ xenial-updates main universe restricted
+deb-src [arch=armhf] http://ports.ubuntu.com/ xenial-updates main universe restricted
 
-deb [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid main universe restricted
-deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid main universe restricted
+deb [arch=i386,amd64] http://archive.ubuntu.com/ubuntu xenial main universe restricted
+deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu xenial main universe restricted
 
-deb [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
-deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu vivid-updates main universe restricted
+deb [arch=i386,amd64] http://archive.ubuntu.com/ubuntu xenial-updates main universe restricted
+deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu xenial-updates main universe restricted
 
-deb [arch=armhf,amd64] http://mobile.kci.pangea.pub vivid main
-deb-src [arch=armhf,amd64] http://mobile.kci.pangea.pub vivid main
+deb [arch=armhf,amd64] http://mobile.neon.pangea.pub xenial main
+deb-src [arch=armhf,amd64] http://mobile.neon.pangea.pub xenial main
 " > /etc/apt/sources.list
 
 echo 'Debug::pkgProblemResolver "true";' > /etc/apt/apt.conf.d/debug
