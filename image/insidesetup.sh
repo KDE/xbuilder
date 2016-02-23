@@ -25,6 +25,13 @@ deb-src [arch=armhf,amd64] http://mobile.neon.pangea.pub xenial main
 echo 'Debug::pkgProblemResolver "true";' > /etc/apt/apt.conf.d/debug
 
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A12B6139432062D1
+
+pushd /tmp
+rm key || true
+wget http://mobile.kci.pangea.pub/Pangea%20CI.gpg.key -O key
+apt-key add key
+popd
+
 apt update
 apt-get install crossbuild-essential-armhf adduser dh-exec vim zsh git htop python sudo cmake-curses-gui -y
 
