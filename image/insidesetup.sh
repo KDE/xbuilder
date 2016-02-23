@@ -4,6 +4,8 @@ set -e
 unset LANG #remove? or just install locales...
 
 source /etc/environment
+apt-get install wget -y
+
 dpkg --add-architecture armhf
 
 echo "deb [arch=armhf] http://ports.ubuntu.com/ xenial main universe restricted
