@@ -4,7 +4,7 @@ CHROOT_PATH=`pwd`/plasma-mobile-sdk
 XBUILDER_DIR=$(readlink -f $(dirname -- "$0"))
 
 set -e
-./chreatechroot $XBUILDER_DIR
+./createchroot.sh $XBUILDER_DIR
 
 sed -e "s#@CHROOT_PATH@#$CHROOT_PATH#" \
     -e "s#@SRC_PATH@#$1#" \
