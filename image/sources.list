@@ -1,0 +1,14 @@
+deb [arch=armhf] http://ports.ubuntu.com/ xenial main universe restricted
+deb-src [arch=armhf]  http://ports.ubuntu.com/ xenial main universe restricted
+
+deb [arch=armhf] http://ports.ubuntu.com/ xenial-updates main universe restricted
+deb-src [arch=armhf] http://ports.ubuntu.com/ xenial-updates main universe restricted
+
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu xenial main universe restricted
+deb-src [arch=amd64] http://archive.ubuntu.com/ubuntu xenial main universe restricted
+
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu xenial-updates main universe restricted
+deb-src [arch=amd64] http://archive.ubuntu.com/ubuntu xenial-updates main universe restricted
+
+deb [arch=armhf,amd64] http://archive.neon.kde.org/dev/unstable xenial main
+deb-src [arch=armhf,amd64] http://archive.neon.kde.org/dev/unstable xenial main
