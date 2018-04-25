@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo "Please specify package name"
+    exit 1
+fi
+
+PKGNAME=$1
+OUTPUT=/tmp/awesomepkg/$PKGNAME
+AUTHOR="Awesome Person <root@localhost>"
+
+rm -rf $OUTPUT
+mkdir -p $OUTPUT/DEBIAN
+
+echo "Package: $PKGNAME
+Version: 999:999
+Architecture: amd64
+Maintainer: $AUTHOR
+Multi-Arch: foreign
+Description: fake package developed by a lazy developer." > $OUTPUT/DEBIAN/control
+
+dpkg-deb -b $OUTPUT $PKGNAME.deb
+
