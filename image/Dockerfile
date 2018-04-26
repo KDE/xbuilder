@@ -17,9 +17,6 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E47F5011FA60FC1DEBB
 RUN apt update
 RUN apt install crossbuild-essential-armhf adduser dh-exec vim zsh git htop python sudo cmake-curses-gui -y
 
-RUN createfakepkg gamin && dpkg -i gamin.deb && rm gamin.deb
-RUN createfakepkg libgamin0 && dpkg -i libgamin0.deb && rm libgamin0.deb
-
 RUN adduser plasmamobile --gecos "" --disabled-password
 
 RUN echo "plasmamobile   ALL=NOPASSWD:ALL" >> /etc/sudoers
