@@ -54,5 +54,11 @@ cmake .. \
  -DKDE_INSTALL_USE_QT_SYS_PATHS=OFF \
  -DQT_PLUGIN_INSTALL_DIR=/usr/lib/arm-linux-gnueabihf/qt5/plugins \
  -DQML_INSTALL_DIR=/usr/lib/arm-linux-gnueabihf/qt5/qml \
- -DKF5_HOST_TOOLING=/usr/lib/x86_64-linux-gnu/cmake 
+ -DKF5_HOST_TOOLING=/usr/lib/x86_64-linux-gnu/cmake
 ```
+
+# Todo
+
+- install all the kde frameworks packages
+- fix the kde-development-environment for multi-arch (neon)
+- document how qmake cross-compile works
