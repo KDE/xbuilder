@@ -34,7 +34,25 @@ docker start -i myproject
 ## Docker things
 Take into account that the files created within the image will be destroyed.
 
-# Tips
-While configuring a project with cmake, is important to add
-the following in order to cmake to work a second time
-`-DCMAKE_TOOLCHAIN_FILE=/usr/share/cmake-3.0/Modules/MultiArchCross.cmake`
+
+# Typical cmake command line
+
+TODO: add this to the xutils
+
+```
+cmake .. \
+ -DCMAKE_INSTALL_PREFIX=/usr \
+ -DCMAKE_VERBOSE_MAKEFILE=ON \
+ -DCMAKE_INSTALL_SYSCONFDIR=/etc \
+ -DCMAKE_INSTALL_LOCALSTATEDIR=/var \
+ -DCMAKE_SYSTEM_NAME=Linux \
+ -DCMAKE_SYSTEM_PROCESSOR=arm \
+ -DCMAKE_C_COMPILER=arm-linux-gnueabihf-gcc \
+ -DCMAKE_CXX_COMPILER=arm-linux-gnueabihf-g++ \
+ -DCMAKE_USE_RELATIVE_PATHS=ON \
+ -DCMAKE_INSTALL_SYSCONFDIR=/etc\
+ -DKDE_INSTALL_USE_QT_SYS_PATHS=OFF \
+ -DQT_PLUGIN_INSTALL_DIR=/usr/lib/arm-linux-gnueabihf/qt5/plugins \
+ -DQML_INSTALL_DIR=/usr/lib/arm-linux-gnueabihf/qt5/qml \
+ -DKF5_HOST_TOOLING=/usr/lib/x86_64-linux-gnu/cmake 
+```
